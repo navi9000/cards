@@ -1,9 +1,12 @@
-import { qs } from "../../utils/dom"
+import { qs, qsa, delegate } from "../../utils/dom"
 import { populate } from "../../utils/templates"
 import { FILTER_TEMPLATE } from "./ui"
 import "./styles.scss"
+import { setSP } from "../../utils/search-params"
 
-export function loadFilters(cardList) {
+const ACTIVE_FILTER_CLASS_NAME = "filter_active"
+
+export function loadFilters(cardList, initialValues) {
   const $container = qs(".controls__filters")
   const countedSubjects = cardList.reduce((prev, curr) => {
     const key = curr.subject
@@ -16,17 +19,32 @@ export function loadFilters(cardList) {
 
   $container.innerHTML = [
     populate(FILTER_TEMPLATE, {
-      variant: "active",
+      variant: initialValues.subject ? "" : ACTIVE_FILTER_CLASS_NAME,
       name: "All",
       count: cardList.length.toString(),
     }),
     ...Object.entries(countedSubjects).map(([name, count]) =>
       populate(FILTER_TEMPLATE, {
-        variant: "default",
+        variant: name === initialValues.subject ? ACTIVE_FILTER_CLASS_NAME : "",
         name,
         count: count.toString(),
       }),
     ),
     ,
   ].join("")
+
+  delegate($container, ".filter", "click", (e) => {
+    const key =
+      e.target.closest("[data-name]").attributes["data-name"].nodeValue
+
+    setSP("subject", key === "All" ? null : key)
+
+    qsa(".filter").forEach((filter) => {
+      if (filter.attributes["data-name"].nodeValue === key) {
+        filter.classList.add(ACTIVE_FILTER_CLASS_NAME)
+      } else {
+        filter.classList.remove(ACTIVE_FILTER_CLASS_NAME)
+      }
+    })
+  })
 }

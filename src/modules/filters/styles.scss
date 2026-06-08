@@ -5,11 +5,9 @@
     border-radius: 4px;
     padding: 10px 20px;
     height: 46px;
-  }
-
-  &_default {
     border-color: transparent;
     color: var(--gray-600);
+    cursor: pointer;
   }
 
   &_active {
