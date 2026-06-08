@@ -8,10 +8,17 @@
   }
 }
 
+.body {
+  padding-top: 43px;
+  padding-bottom: 160px;
+}
+
 .top {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  margin-right: 52px;
 
   &__subheading {
     font-weight: 700;
@@ -32,6 +39,9 @@
 
 .controls {
   display: flex;
+  margin-top: 85px;
+  margin-bottom: 59px;
+  align-items: center;
 
   &__filters {
     flex: 1;
@@ -53,7 +63,8 @@
     border-radius: 4px;
     width: 315px;
     height: 44px;
-    padding-left: 16px;
+    padding-top: 2px;
+    padding-left: 14px;
     padding-right: 40px;
     background-image: url("assets/search.svg");
     background-repeat: no-repeat;

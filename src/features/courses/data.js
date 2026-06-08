@@ -28,7 +28,7 @@ export const courseList = [
   {
     subject: "HR & Recruting",
     slug: "hr",
-    name: "HR  Management and Analytics",
+    name: "HR Management and Analytics",
     price: 200,
     author: "Leslie Alexander Li",
     img: img3,

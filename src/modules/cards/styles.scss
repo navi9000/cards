@@ -17,7 +17,7 @@
   }
 
   &__content {
-    padding: 24px;
+    padding: 21px 24px;
   }
 
   &__tag {
@@ -55,13 +55,15 @@
   &__name {
     font-weight: 700;
     font-size: 20px;
-    line-height: 150%;
+    line-height: 146%;
     color: var(--gray-900);
+    margin-top: 21px;
+    margin-bottom: 21px;
   }
 
   &__bottom {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
