@@ -29,3 +29,40 @@
     color: var(--gray-900);
   }
 }
+
+.controls {
+  display: flex;
+
+  &__filters {
+    flex: 1;
+  }
+
+  &__search {
+    flex: 0;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.search {
+  &__input {
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    width: 315px;
+    height: 44px;
+    padding-left: 16px;
+    padding-right: 40px;
+    background-image: url("assets/search.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px top 50%;
+  }
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}

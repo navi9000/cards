@@ -1,0 +1,77 @@
+.card {
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  height: 438px;
+  box-shadow:
+    0 4px 4px -4px rgba(30, 33, 44, 0.03),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 80px 80px -20px rgba(154, 156, 165, 0.08);
+  background: var(--white);
+  overflow: hidden;
+
+  &__img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 24px;
+  }
+
+  &__tag {
+    border-radius: 4px;
+    padding: 1px 8px;
+    height: 23px;
+    background-color: var(--card-tag-color);
+    color: var(--white);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    width: max-content;
+
+    &_marketing {
+      --card-tag-color: var(--success);
+    }
+
+    &_design {
+      --card-tag-color: #f52f6e;
+    }
+
+    &_management {
+      --card-tag-color: var(--info);
+    }
+
+    &_development {
+      --card-tag-color: #7772f1;
+    }
+
+    &_hr {
+      --card-tag-color: var(--warning);
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--gray-900);
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--gray-700);
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--danger);
+  }
+}
