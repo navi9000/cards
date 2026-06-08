@@ -1,12 +1,13 @@
 import { qs, qsa, delegate } from "../../utils/dom"
 import { populate } from "../../utils/templates"
 import { FILTER_TEMPLATE } from "./ui"
+import { getSP, setSP } from "../../utils/search-params"
 import "./styles.scss"
-import { setSP } from "../../utils/search-params"
 
 const ACTIVE_FILTER_CLASS_NAME = "filter_active"
 
-export function loadFilters(cardList, initialValues) {
+export function loadFilters(cardList) {
+  const subject = getSP("subject")
   const $container = qs(".controls__filters")
   const countedSubjects = cardList.reduce((prev, curr) => {
     const key = curr.subject
@@ -19,13 +20,13 @@ export function loadFilters(cardList, initialValues) {
 
   $container.innerHTML = [
     populate(FILTER_TEMPLATE, {
-      variant: initialValues.subject ? "" : ACTIVE_FILTER_CLASS_NAME,
+      variant: subject ? "" : ACTIVE_FILTER_CLASS_NAME,
       name: "All",
       count: cardList.length.toString(),
     }),
     ...Object.entries(countedSubjects).map(([name, count]) =>
       populate(FILTER_TEMPLATE, {
-        variant: name === initialValues.subject ? ACTIVE_FILTER_CLASS_NAME : "",
+        variant: name === subject ? ACTIVE_FILTER_CLASS_NAME : "",
         name,
         count: count.toString(),
       }),

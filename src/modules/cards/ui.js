@@ -8,3 +8,5 @@ export const CARD_TEMPLATE = `
     </div>
 </article>
 `
+
+export const NO_MATCHES_TEMPLATE = `<div>No matches</div>`

@@ -1,19 +1,23 @@
 import { qs, on } from "../../utils/dom"
 import { populate } from "../../utils/templates"
-import { CARD_TEMPLATE } from "./ui"
+import { CARD_TEMPLATE, NO_MATCHES_TEMPLATE } from "./ui"
 import { filterBySearch } from "./filter-by-search"
 import { filterBySubject } from "./filter-by-subject"
 import observer from "../../features/observer/observer"
 import "./styles.scss"
 
 function getCardList(cardList) {
-  return cardList
+  const list = cardList
     .filter(filterBySubject)
     .filter(filterBySearch)
     .map(({ price, ...rest }) =>
       populate(CARD_TEMPLATE, { price: price.toString(), ...rest }),
     )
-    .join("")
+
+  if (!list.length) {
+    return NO_MATCHES_TEMPLATE
+  }
+  return list.join("")
 }
 
 export function loadCards(cardList) {

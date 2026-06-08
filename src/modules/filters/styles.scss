@@ -10,6 +10,12 @@
     cursor: pointer;
     display: flex;
     gap: 5px;
+    transition: 300ms;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
   }
 
   &_active {

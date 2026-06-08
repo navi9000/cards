@@ -9,10 +9,8 @@ import { loadSearch } from "./modules/search/load-search"
 
 async function run() {
   const { courseList } = await import("./features/courses/data")
-  const subject = getSP("subject")
-  const search = getSP("search")
 
-  loadFilters(courseList, { subject })
+  loadFilters(courseList)
   loadSearch()
   loadCards(courseList)
 }
