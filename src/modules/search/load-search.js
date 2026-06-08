@@ -4,8 +4,8 @@ import { setSP } from "../../utils/search-params"
 export function loadSearch() {
   const $container = qs(".search__input")
 
-  on($container, "change", (e) => {
+  on($container, "input", (e) => {
     const value = e.target.value
-    setSP("search", value ?? null)
+    setSP("search", value ? value.toLowerCase() : null)
   })
 }
