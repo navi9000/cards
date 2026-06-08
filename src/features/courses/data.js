@@ -1,12 +1,12 @@
-import img1 from "../../assets/card-1.png"
-import img2 from "../../assets/card-2.png"
-import img3 from "../../assets/card-3.png"
-import img4 from "../../assets/card-4.png"
-import img5 from "../../assets/card-5.png"
-import img6 from "../../assets/card-6.png"
-import img7 from "../../assets/card-7.png"
-import img8 from "../../assets/card-8.png"
-import img9 from "../../assets/card-9.png"
+import img1 from "../../assets/card-1.webp"
+import img2 from "../../assets/card-2.webp"
+import img3 from "../../assets/card-3.webp"
+import img4 from "../../assets/card-4.webp"
+import img5 from "../../assets/card-5.webp"
+import img6 from "../../assets/card-6.webp"
+import img7 from "../../assets/card-7.webp"
+import img8 from "../../assets/card-8.webp"
+import img9 from "../../assets/card-9.webp"
 
 export const courseList = [
   {
